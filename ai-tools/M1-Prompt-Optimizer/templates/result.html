@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimized Prompt</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Optimized Prompt</h1>
+            <p>Here's your optimized prompt for <strong>{{ task.replace('_', ' ').title() }}</strong>:</p>
+        </header>
+
+        <div class="result-box">
+            <div class="result-header">
+                <h3>Input Prompt:</h3>
+                <p>{{ input_prompt }}</p>
+            </div>
+            <div class="result-content">
+                <h3>Optimized Prompt:</h3>
+                <pre>{{ optimized }}</pre>
+            </div>
+        </div>
+
+        <div class="actions">
+            <a href="{{ url_for('home') }}" class="btn">Optimize Another Prompt</a>
+            <button onclick="copyToClipboard()" class="btn btn-secondary">Copy to Clipboard</button>
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard() {
+            const text = document.querySelector('.result-content pre').textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Copied to clipboard!');
+            });
+        }
+    </script>
+</body>
+</html>

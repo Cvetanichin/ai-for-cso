@@ -1,0 +1,6 @@
+Task,Category,Weak Prompt,Strong Prompt (4-Step Formula),Tested,Notes
+Donor update,Donor Reporting,"Write a donor update.","You are a programme officer for a [NGO type] NGO in [region]. Draft a 150-word donor update for our quarterly report. Focus on [achievement]. Tone: professional, data-led.",No,
+Grant problem statement,Grant Writing,"Write a problem statement.","You are a grant writer for a [NGO type] NGO working in [region]. Draft a problem statement for a [amount]€ project on [topic]. Use simple language and align with [donor] priorities. Keep under [word limit] words.",No,
+Beneficiary feedback summary,M&E,"Summarize this data.","You are an M&E specialist for a [NGO type] NGO. Analyze this [data type] and identify [N] trends, [N] gaps, and [N] recommendations. Use bullet points and plain language.",No,
+Social media post,Stakeholder Comms,"Write a social media post.","You are a communications officer for a [NGO type] NGO. Draft a [platform] post (X characters) in a [tone] tone about [topic]. Include a call-to-action.",No,
+Donor research,Fundraising,"Find me some donors.","You are a fundraising manager for a [NGO type] NGO. Research [N] potential donors for a [topic] project in [region]. Focus on donors with [criteria]. Output as a table.",No,
