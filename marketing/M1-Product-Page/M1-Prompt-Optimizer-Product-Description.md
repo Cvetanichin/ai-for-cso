@@ -46,13 +46,12 @@ python prompt_optimizer.py --input "Draft a report" --task "donor_reporting"
 
 ## Related Products
 
-- **AI Literacy for NGOs: Starter Kit** — the web app plus templates, no code required. $29.
-- **Full "AI at Work for Civil Society" Course** — learn AI for all CSO workflows. $199.
+- **AI Literacy for NGOs: Starter Kit** — the web app plus templates, no code required. €29.
+- **Full "AI at Work for Civil Society" Course** — learn AI for all CSO workflows. Pricing TBD.
 
 ## Pricing
 
-- Script + Web App: **$49** one-time
-- Bundle with Starter Kit + full course: **$249** (save $29)
+- Script + Web App: **€69** one-time (live on Gumroad)
 
 ---
-**[Add to Cart]**
+**[Buy on Gumroad →](https://cvetanichin.gumroad.com/l/zqvpon)**

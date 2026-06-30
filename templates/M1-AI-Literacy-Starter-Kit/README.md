@@ -29,8 +29,8 @@ Buyers go from "I don't know where to start with AI" to having a working prompt 
 
 ## Pricing
 
-- Standalone: **$29**
-- Included free with full course enrolment.
+- Standalone: **€29** — [live on Gumroad](https://cvetanichin.gumroad.com/l/NGOStarterKit)
+- Included free with full course enrolment (course not yet built/priced).
 
 ---
 *Cvetanichin Consultancy — cvetanichin.org*

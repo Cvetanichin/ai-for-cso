@@ -46,7 +46,7 @@ Cvetanichin__ai-for-cso/
 
 | Module | Course Content | Digital Product | AI Tool | Status |
 |---|---|---|---|---|
-| M1 — AI Foundations for CSO Work | ✅ 3 lessons drafted | ✅ Starter Kit drafted | ✅ Prompt Optimizer (CLI + web app) built and tested | **Done** |
+| M1 — AI Foundations for CSO Work | ✅ 3 lessons drafted | ✅ Starter Kit **live on Gumroad** | ✅ Prompt Optimizer (CLI + web app) built, tested, **live on Gumroad** | **Done** |
 | M2 — Grant Proposal Writing with AI | ⬜ | ⬜ | ⬜ | Not started |
 | M3 — Monitoring & Evaluation with AI | ⬜ | ⬜ | ⬜ | Not started |
 | M4 — Donor Reporting & Compliance | ⬜ | ⬜ | ⬜ | Not started |
@@ -58,8 +58,8 @@ Cvetanichin__ai-for-cso/
 
 | Product | Description | Price | Sold via | Status |
 |---|---|---|---|---|
-| AI Literacy for NGOs: Starter Kit | Quick-start guide + templates for CSO AI usage | $29 | [Gumroad](https://cvetanichin.gumroad.com/) | Drafted — needs Gumroad listing |
-| Prompt Optimizer Script + Web App | Customisable script + web app for technical users | $49 | [Gumroad](https://cvetanichin.gumroad.com/) | Built, tested — needs Gumroad listing |
+| AI Literacy for NGOs: Starter Kit | Quick-start guide + templates for CSO AI usage | €29 | [Gumroad](https://cvetanichin.gumroad.com/l/NGOStarterKit) | **Live** |
+| Prompt Optimizer Script + Web App | Customisable script + web app for technical users | €69 | [Gumroad](https://cvetanichin.gumroad.com/l/zqvpon) | **Live** |
 | M1: AI Foundations for CSO Work | Full course module (3 lessons) | TBD — pricing pending delivery mechanism | cvetanichin.org | Drafted — delivery platform not yet chosen |
 
 ## Quick Start

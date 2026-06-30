@@ -44,13 +44,12 @@ Organise and save your team's best prompts. Collaborate to refine prompts over t
 
 ## Related Products
 
-- **Prompt Optimizer Script + Web App (Advanced)** — for technical users who want to customise the tool. $49.
-- **Full "AI at Work for Civil Society" Course** — all seven modules + templates. $199 (includes this kit free).
+- **Prompt Optimizer Script + Web App (Advanced)** — for technical users who want to customise the tool. €69.
+- **Full "AI at Work for Civil Society" Course** — all seven modules + templates. Pricing TBD.
 
 ## Pricing
 
-- Starter Kit: **$29** one-time
-- Bundle with full course: **$199** (this kit included free)
+- Starter Kit: **€29** one-time (live on Gumroad)
 
 ---
-**[Add to Cart]**
+**[Buy on Gumroad →](https://cvetanichin.gumroad.com/l/NGOStarterKit)**
