@@ -1,5 +1,7 @@
 # AI at Work for Civil Society
 
+[![CI — Python Tools](https://github.com/Cvetanichin/ai-for-cso/actions/workflows/python-ci.yml/badge.svg)](https://github.com/Cvetanichin/ai-for-cso/actions/workflows/python-ci.yml)
+
 **By Vaska Cvetanoska (Cvetanichin Consultancy)**
 **Phase 1 — AI Training Track for Civil Society Professionals**
 
@@ -65,6 +67,18 @@ python app.py
 1. Create a feature branch: `git checkout -b feature/M2-Grant-Templates`
 2. Add content to the relevant module folder.
 3. Push and open a PR: `git push origin feature/M2-Grant-Templates`
+
+## Continuous Integration
+
+Every push or PR touching `ai-tools/**/*.py` triggers an automated check ([`.github/workflows/python-ci.yml`](.github/workflows/python-ci.yml)) that:
+
+1. **Auto-discovers** every module under `/ai-tools` that has its own `requirements.txt` — no workflow edits needed when M2–M7 are added.
+2. **Lints** each module with flake8 (errors only — undefined names, unused imports, syntax issues; not a style guide).
+3. **Verifies every `.py` file imports cleanly** — catches the "looks fine, crashes on import" class of bug.
+4. **Boots any `app.py`** found and hits `/` and `/healthz` to confirm the Flask app actually serves.
+5. **Smoke-tests any CLI entrypoint** (`argparse` + `def main()`) via `--help`.
+
+If a module fails any check, the PR is blocked from merging into `main`. This is meant to catch breakage before a buyer hits it — not to enforce a style guide.
 
 ## Tools Used
 

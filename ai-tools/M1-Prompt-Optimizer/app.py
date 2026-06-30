@@ -6,7 +6,7 @@ touching the command line.
 """
 
 from flask import Flask, render_template, request, jsonify
-from prompt_optimizer import optimize_prompt, get_available_tasks, PROMPT_TEMPLATES, DEFAULTS
+from prompt_optimizer import optimize_prompt, PROMPT_TEMPLATES, DEFAULTS
 
 app = Flask(__name__)
 

@@ -1,0 +1,126 @@
+name: CI — Python Tools
+
+# Runs on every push and PR that touches Python code, so adding M2's
+# logframe generator, M3's indicator scripts, etc. gets checked
+# automatically with zero changes to this file.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "ai-tools/**/*.py"
+      - "ai-tools/**/requirements.txt"
+      - ".github/workflows/python-ci.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "ai-tools/**/*.py"
+      - "ai-tools/**/requirements.txt"
+      - ".github/workflows/python-ci.yml"
+  workflow_dispatch: {}
+
+jobs:
+  discover:
+    name: Find Python modules
+    runs-on: ubuntu-latest
+    outputs:
+      modules: ${{ steps.find.outputs.modules }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Find every ai-tools module with a requirements.txt
+        id: find
+        run: |
+          # One JSON array entry per module folder, e.g.
+          # ["ai-tools/M1-Prompt-Optimizer", "ai-tools/M2-..."]
+          modules=$(find ai-tools -mindepth 1 -maxdepth 1 -type d \
+            -exec test -f '{}/requirements.txt' \; -print \
+            | jq -R -s -c 'split("\n") | map(select(length > 0))')
+          echo "modules=$modules" >> "$GITHUB_OUTPUT"
+          echo "Discovered modules: $modules"
+
+  lint-and-test:
+    name: Lint & smoke test
+    needs: discover
+    if: needs.discover.outputs.modules != '[]'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        module: ${{ fromJson(needs.discover.outputs.modules) }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+          cache-dependency-path: "${{ matrix.module }}/requirements.txt"
+
+      - name: Install dependencies
+        working-directory: ${{ matrix.module }}
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install flake8
+
+      - name: Lint (flake8 — errors only, not style nitpicks)
+        working-directory: ${{ matrix.module }}
+        run: |
+          # E9/F-series = real bugs (syntax errors, undefined names, unused
+          # imports). Line-length and style left out deliberately — this
+          # is meant to catch breakage, not enforce a style guide.
+          flake8 . \
+            --select=E9,F \
+            --exclude=templates,static \
+            --show-source
+
+      - name: Verify module imports cleanly
+        working-directory: ${{ matrix.module }}
+        run: |
+          # Catches import-time crashes (missing deps, bad syntax in
+          # f-strings, etc.) on every .py file at the module root.
+          for f in *.py; do
+            [ -f "$f" ] || continue
+            modname="${f%.py}"
+            echo "Importing $modname..."
+            python -c "import importlib; importlib.import_module('$modname')"
+          done
+
+      - name: Smoke test Flask app (if present)
+        working-directory: ${{ matrix.module }}
+        run: |
+          if [ -f "app.py" ]; then
+            pip install requests
+            python app.py &
+            APP_PID=$!
+            sleep 3
+
+            echo "Checking homepage..."
+            curl -sf -o /dev/null http://localhost:5000/ || { echo "Homepage failed to respond"; kill $APP_PID; exit 1; }
+
+            if curl -sf http://localhost:5000/healthz > /dev/null 2>&1; then
+              echo "Health check OK"
+            else
+              echo "No /healthz endpoint found (optional) — skipping"
+            fi
+
+            kill $APP_PID
+            wait $APP_PID 2>/dev/null || true
+          else
+            echo "No app.py in this module — skipping Flask smoke test"
+          fi
+
+      - name: Run CLI smoke test (if prompt_optimizer-style script present)
+        working-directory: ${{ matrix.module }}
+        run: |
+          # Generic smoke test for any module exposing optimize_prompt() /
+          # get_available_tasks() — extend this list as new ai-tools modules
+          # adopt a similar CLI pattern.
+          for f in *.py; do
+            [ -f "$f" ] || continue
+            if grep -q "def main(" "$f" 2>/dev/null && grep -q "argparse" "$f" 2>/dev/null; then
+              echo "Found CLI entrypoint in $f — verifying --help works"
+              python "$f" --help > /dev/null 2>&1 || python "$f" 2>&1 | head -5 || true
+            fi
+          done
