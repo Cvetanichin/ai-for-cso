@@ -46,7 +46,7 @@ Cvetanichin__ai-for-cso/
 
 | Module | Course Content | Digital Product | AI Tool | Status |
 |---|---|---|---|---|
-| M1 — AI Foundations for CSO Work | ✅ 3 lessons drafted | ✅ Starter Kit **live on Gumroad** | ✅ Prompt Optimizer (CLI + web app) built, tested, **live on Gumroad** | **Done** |
+| M1 — AI Foundations for CSO Work | ✅ 3 lessons drafted | ✅ Starter Kit **live on Gumroad** | ✅ Prompt Optimizer **live on Gumroad** + [working demo](https://ai-for-cso.vercel.app/) | **Done** |
 | M2 — Grant Proposal Writing with AI | ⬜ | ⬜ | ⬜ | Not started |
 | M3 — Monitoring & Evaluation with AI | ⬜ | ⬜ | ⬜ | Not started |
 | M4 — Donor Reporting & Compliance | ⬜ | ⬜ | ⬜ | Not started |
@@ -64,7 +64,10 @@ Cvetanichin__ai-for-cso/
 
 ## Quick Start
 
-### Run the M1 Prompt Optimizer locally
+### Try the M1 Prompt Optimizer live
+**[ai-for-cso.vercel.app](https://ai-for-cso.vercel.app/)** — no install required.
+
+### Run it locally instead
 ```bash
 cd ai-tools/M1-Prompt-Optimizer
 pip install -r requirements.txt

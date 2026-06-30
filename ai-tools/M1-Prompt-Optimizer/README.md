@@ -2,9 +2,14 @@
 
 **Script + Web App** — optimize prompts for civil society workflows (grant writing, donor reporting, M&E, stakeholder comms, fundraising research) using a tested four-step formula.
 
+**Live:** [ai-for-cso.vercel.app](https://ai-for-cso.vercel.app/) — try it now, no setup required.
+
 ## Quick Start
 
-### Option 1 — Web App (no coding)
+### Option 0 — Use it live (no install)
+Visit [ai-for-cso.vercel.app](https://ai-for-cso.vercel.app/) directly.
+
+### Option 1 — Web App, run locally (no coding)
 ```bash
 pip install -r requirements.txt
 python app.py
@@ -18,7 +23,7 @@ python prompt_optimizer.py --input "Draft a report" --task "donor_reporting" --n
 
 ### Option 3 — API (for integration, e.g. WordPress)
 ```bash
-curl -X POST http://localhost:5000/api/optimize \
+curl -X POST https://ai-for-cso.vercel.app/api/optimize \
   -H "Content-Type: application/json" \
   -d '{"input_prompt": "Draft a proposal", "task": "grant_writing", "ngo_type": "education"}'
 ```
@@ -69,15 +74,24 @@ Restart the app and the new task appears automatically in the dropdown — no ot
 
 ## Deployment
 
-- **Vercel:** `npm install -g vercel && vercel` (use a Python/Flask adapter, e.g. `vercel-python`, or deploy as a serverless function).
+**Live on Vercel:** [ai-for-cso.vercel.app](https://ai-for-cso.vercel.app/)
+
+Deployed via Vercel's native Flask auto-detection — no `vercel.json`, no custom adapter needed. To redeploy or replicate for a future module:
+
+1. Import the GitHub repo at [vercel.com/new](https://vercel.com/new).
+2. Set **Root Directory** to the tool's folder (e.g. `ai-tools/M1-Prompt-Optimizer`) **before** the first deploy — changing it after an initial deploy and clicking "Redeploy" does not reliably re-trigger framework detection; delete and re-import if that happens.
+3. Confirm **Framework Preset** shows **Flask** (it auto-detects from the module-level `app = Flask(__name__)` in `app.py`).
+4. Deploy. A correct build installs `requirements.txt` and takes several seconds — a build that completes in under 100ms with no pip install means Root Directory wasn't applied; check Settings → General → Root Directory.
+
+Other options, untested but standard for a Flask app:
 - **PythonAnywhere:** upload files via the web UI or Git, configure a Flask web app in the dashboard.
-- **Render / Railway:** connect the GitHub repo, set the start command to `gunicorn app:app`, and add `gunicorn` to `requirements.txt` for production use (the Flask dev server is not production-safe).
+- **Render / Railway:** connect the GitHub repo, set the start command to `gunicorn app:app` (already in `requirements.txt` and `Procfile`).
 
 ## Integration Ideas
 
-- **WordPress (cvetanichin.org):** call `/api/optimize` from a custom block or plugin so visitors can try it directly on the site.
-- **Embedded demo:** iframe the deployed web app into a course/product page on cvetanichin.org for a live, no-signup demo during the lesson walkthrough.
-- **Gumroad delivery:** link to the deployed app URL as a bonus resource in the Starter Kit and Prompt Optimizer product files.
+- **WordPress (cvetanichin.org):** call [https://ai-for-cso.vercel.app/api/optimize](https://ai-for-cso.vercel.app/api/optimize) from a custom block or plugin so visitors can try it directly on the site.
+- **Embedded demo:** iframe [ai-for-cso.vercel.app](https://ai-for-cso.vercel.app/) into a course/product page on cvetanichin.org for a live, no-signup demo during the lesson walkthrough.
+- **Gumroad delivery:** the live demo link is now referenced in both M1 product listings.
 
 ## Support
 

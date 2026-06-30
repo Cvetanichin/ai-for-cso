@@ -8,6 +8,7 @@ How cvetanichin.org, Gumroad, and Intelligence Workspace fit together — and wh
 |---|---|---|
 | Consultancy portfolio | [project-lf54e.vercel.app](https://project-lf54e.vercel.app/) | Deployed |
 | Intelligence Workspace (SaaS prototype) | [figma-projects-zeta.vercel.app](https://figma-projects-zeta.vercel.app/login) | Deployed, has a login screen |
+| M1 Prompt Optimizer tool | [ai-for-cso.vercel.app](https://ai-for-cso.vercel.app/) | Deployed — Vercel project, separate from the consultancy portfolio above |
 | cvetanichin.org | WordPress, Astra theme | Fresh install — unconfigured, no branding applied yet |
 | Gumroad | [cvetanichin.gumroad.com](https://cvetanichin.gumroad.com/) | 2 products live: [Starter Kit](https://cvetanichin.gumroad.com/l/NGOStarterKit) (€29), [Prompt Optimizer](https://cvetanichin.gumroad.com/l/zqvpon) (€69) |
 

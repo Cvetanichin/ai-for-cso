@@ -16,7 +16,7 @@ Nine critical questions to ask before adopting any AI tool. Avoid data privacy b
 Ten free/low-cost AI tools for CSOs, with honest pros, cons, and use cases — covering grant writing, M&E, donor reporting, and more.
 
 **Prompt Optimizer Web App** (free access)
-Optimize prompts in seconds — no coding required. Five predefined templates for CSO workflows.
+Optimize prompts in seconds — no coding required. Five predefined templates for CSO workflows. [Try it live](https://ai-for-cso.vercel.app/).
 
 **Notion Template for Prompt Library**
 Organise and save your team's best prompts. Collaborate to refine prompts over time.
