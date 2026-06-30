@@ -29,7 +29,7 @@ curl -X POST http://localhost:5000/api/optimize \
 |---|---|
 | Web interface | Form-based UI for non-technical users |
 | CLI tool | Optimize prompts from the command line, with `--json` and `--output` flags |
-| API endpoint | `/api/optimize` — integrate with WordPress, Brainster LMS, or other platforms |
+| API endpoint | `/api/optimize` — integrate with WordPress, Gumroad product pages, or other platforms |
 | 5 CSO task templates | grant_writing, donor_reporting, me_analysis, stakeholder_comms, fundraising_research |
 | Sensible defaults | Works out of the box; override any field via form, CLI flag, or API payload |
 | Copy to clipboard | One-click copy on the results page |
@@ -75,8 +75,9 @@ Restart the app and the new task appears automatically in the dropdown — no ot
 
 ## Integration Ideas
 
-- **WordPress:** call `/api/optimize` from a custom block or plugin on cvetanichin.org.
-- **Brainster LMS:** embed the web app in an iframe for students to use during Lesson 2's live exercise.
+- **WordPress (cvetanichin.org):** call `/api/optimize` from a custom block or plugin so visitors can try it directly on the site.
+- **Embedded demo:** iframe the deployed web app into a course/product page on cvetanichin.org for a live, no-signup demo during the lesson walkthrough.
+- **Gumroad delivery:** link to the deployed app URL as a bonus resource in the Starter Kit and Prompt Optimizer product files.
 
 ## Support
 

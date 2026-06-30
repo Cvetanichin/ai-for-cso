@@ -3,20 +3,29 @@
 [![CI — Python Tools](https://github.com/Cvetanichin/ai-for-cso/actions/workflows/python-ci.yml/badge.svg)](https://github.com/Cvetanichin/ai-for-cso/actions/workflows/python-ci.yml)
 
 **By Vaska Cvetanoska (Cvetanichin Consultancy)**
-**Phase 1 — AI Training Track for Civil Society Professionals**
+**A self-published AI training track for civil society professionals**
 
-A seven-module specialist AI training track for CSO professionals, delivered as a Brainster LMS course plus seven standalone sellable digital products. This repo is the source of truth for course content, templates, and AI tools.
+A seven-module specialist AI training track for CSO professionals, delivered through [cvetanichin.org](https://cvetanichin.org) and sold as standalone digital products on [Gumroad](https://cvetanichin.gumroad.com/), plus seven matching AI tools. This repo is the source of truth for course content, templates, and AI tools.
 
 ## Project Overview
 
 CSOs across the Western Balkans and broader Europe manage EU-funded grants, design M&E frameworks, write donor reports, and run public outreach — without dedicated AI literacy training built for their workflows. This course closes that gap.
+
+This is one of two product lines under the Cvetanichin brand:
+
+| Line | What it is | Sold via |
+|---|---|---|
+| **AI at Work for Civil Society** (this repo) | Skills training — course + digital products + free AI tools | cvetanichin.org → Gumroad checkout |
+| **Intelligence Workspace** | A standalone CSO project management SaaS (proposal drafting, project tracking, funding/open-call monitoring, M&E analysis) | Its own platform — separate repo, separate pricing |
+
+The two are related but independent: this course teaches the skills; Intelligence Workspace is a separate tool sold to the same audience. See [`/docs/platform-architecture.md`](docs/platform-architecture.md) for how cvetanichin.org connects everything.
 
 ## Repo Structure
 
 ```
 Cvetanichin__ai-for-cso/
 ├── README.md
-├── course-content/          # Course materials (scripts, slides, exercises) — Brainster LMS
+├── course-content/          # Course materials (scripts, slides, exercises)
 │   └── M1-AI-Foundations/
 ├── templates/                # Standalone sellable digital products
 │   └── M1-AI-Literacy-Starter-Kit/
@@ -47,11 +56,11 @@ Cvetanichin__ai-for-cso/
 
 ## Products
 
-| Product | Description | Price | Status |
-|---|---|---|---|
-| AI Literacy for NGOs: Starter Kit | Quick-start guide + templates for CSO AI usage | $29 | Drafted |
-| Prompt Optimizer Script + Web App | Customisable script + web app for technical users | $49 | Built, tested |
-| M1: AI Foundations for CSO Work | Full course module (3 lessons) | Included in full course | Drafted |
+| Product | Description | Price | Sold via | Status |
+|---|---|---|---|---|
+| AI Literacy for NGOs: Starter Kit | Quick-start guide + templates for CSO AI usage | $29 | [Gumroad](https://cvetanichin.gumroad.com/) | Drafted — needs Gumroad listing |
+| Prompt Optimizer Script + Web App | Customisable script + web app for technical users | $49 | [Gumroad](https://cvetanichin.gumroad.com/) | Built, tested — needs Gumroad listing |
+| M1: AI Foundations for CSO Work | Full course module (3 lessons) | TBD — pricing pending delivery mechanism | cvetanichin.org | Drafted — delivery platform not yet chosen |
 
 ## Quick Start
 
@@ -84,9 +93,10 @@ If a module fails any check, the PR is blocked from merging into `main`. This is
 
 - **Claude / Claude Code** — content drafting, script generation, tool building.
 - **Flask** — web app layer for AI tools.
-- **GitHub** — version control for all course content and products.
-- **WordPress (cvetanichin.org)** — digital product sales pages.
-- **Brainster LMS** — course delivery and certification.
+- **GitHub** — version control for all course content and products, CI via GitHub Actions.
+- **WordPress (cvetanichin.org)** — course/product landing pages, blog.
+- **Gumroad** — checkout and digital product delivery.
+- **Vercel** — hosting for the [consultancy portfolio](https://project-lf54e.vercel.app/) and the separate [Intelligence Workspace](https://figma-projects-zeta.vercel.app/login) SaaS.
 
 ## License
 

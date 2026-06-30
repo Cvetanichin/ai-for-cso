@@ -23,4 +23,4 @@
 
 ## Submission
 
-Paste your weak prompt, strong prompt, and the two outputs into the shared Notion exercise log (link provided in Brainster LMS).
+Paste your weak prompt, strong prompt, and the two outputs into your shared Notion exercise log (link provided in your course welcome email).

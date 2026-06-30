@@ -13,7 +13,7 @@ Five predefined templates for CSO tasks — grant writing, donor reporting, M&E,
 User-friendly interface for non-technical team members. Deployable in minutes (Render, PythonAnywhere, Heroku-style platforms).
 
 **Documentation**
-Step-by-step setup guide for local use and deployment, plus an API endpoint for integration with WordPress, Brainster LMS, or other platforms.
+Step-by-step setup guide for local use and deployment, plus an API endpoint for integration with WordPress, Gumroad, or other platforms.
 
 **30 Days of Email Support**
 Help with setup, customisation, or troubleshooting.

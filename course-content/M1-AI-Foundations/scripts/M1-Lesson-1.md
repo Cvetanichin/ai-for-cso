@@ -105,6 +105,6 @@
 >
 > Resources:
 > - Download the AI Tool Selection Guide (PDF) from your Starter Kit.
-> - Join the Brainster LMS forum to share questions and insights.
+> - Join the course community to share questions and insights.
 >
 > See you in Lesson 2.

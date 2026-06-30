@@ -17,4 +17,4 @@ If you answered "no" to any of the first three data-privacy questions, what woul
 
 ## Submission
 
-Share your completed checklist and decision in the Brainster LMS forum thread for M1.
+Share your completed checklist and decision in the course community forum thread for M1.
